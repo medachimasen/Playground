@@ -42,11 +42,15 @@ public:
 		hand.push_back(a);
 		int 
 	}
-	void addMoney();
+	void addMoney(int a){
+
+	}
 	void reset();
 private:
 	vector<Card> hand;
 	int total;
 	int aceTotal;
+	int money;
+	
 	bool bust;
 }

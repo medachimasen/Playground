@@ -18,11 +18,13 @@ private:
 }
 class Dealer : public Player{
 public:
+	Dealer(Card a);
 	void showOne();
 	void showOneCard();
 private:
 	vector<Card> hand;
 	int firstHand;
 	int total;
+	int aceTotal;
 	bool bust;
 }
