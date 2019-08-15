@@ -1,6 +1,15 @@
 #include <game.h>
 #include <iostream>
 using namespace std;
+class Game{
+public:
+	Game(){ //players determines the amount of people that can play 
+
+	}
+private:
+	Player playersOnBoard[7];
+	
+}
 class Player{
 public:
 	Player(int mon){
@@ -57,10 +66,34 @@ public:
 		bj = 0;
 		aces = 0;
 	};
+	bool busted(){
+		return bust;
+	}
 private:
 	vector<Card> hand;
 	int total;
 	int money;
+	bool bust;
+	bool bj;
+	int aces;
+}
+class Dealer : public Player{
+public:
+	Dealer(){
+	}
+	void showOne(){
+		cout << "Total: " <<  hand[0].get_val() <<endl;
+		hand[0].show();
+	}
+	bool mustStand(){
+		if(total >= 17){
+			return true;
+		}
+		return false;
+	}
+private:
+	vector<Card> hand;
+	int total;
 	bool bust;
 	bool bj;
 	int aces;
